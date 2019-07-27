@@ -1,0 +1,11 @@
+{
+  "name": "ask_front",
+  "version": "1.0.0",
+  "description": "Client web-interface for my service ASK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Ershov",
+  "license": "ISC"
+}

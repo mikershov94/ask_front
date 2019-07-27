@@ -3,7 +3,6 @@
 		[
 			"@babel/preset-env", 
 			{
-				"debug": true,
 				"targets": [
 					"last 2 chrome versions",
 					"last 2 firefox versions",

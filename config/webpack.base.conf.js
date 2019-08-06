@@ -2,22 +2,28 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin');
-var isProduction = (process.env.NODE_ENV == 'production');
+//const CopyPlugin = require('copy-webpack-plugin');
+
+const PATHS = {
+	src: path.join(__dirname, '../src/'),
+	dist: path.join(__dirname, '../dist/'),
+	public: path.join(__dirname, '../public/'),
+}
 
 module.exports = {
+
+	externals: {
+		paths: PATHS
+	},
+
 	entry: {
-		app: './src/index.js'
+		app: PATHS.src + 'index.js'
 	},
 	output: {
 		filename: 'js/[name].js',
-		path: path.resolve(__dirname, 'dist'),
-		publicPath: '/dist',
+		path: PATHS.dist,
+		publicPath: '',
 	},
-
-	devtool: (isProduction) ? 'source-map' : 'cheap-inline-module-source-map',
 
 	module: {
 
@@ -51,11 +57,8 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[path][name].[ext]'
+							name: 'img/[name].[ext]'
 						},
-					},
-					{
-						loader: 'img-loader'
 					},
 				],
 			},
@@ -65,14 +68,21 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[path][name].[ext]'
+							name: PATHS.public + 'fonts/[name].[ext]'
 						},
 					},
 				],
 			},
 			{
 				test: /\.svg$/,
-				loader: 'svg-url-loader',
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: 'icons/[name].[ext]'
+						},
+					},
+				],
 			},
 		
 		],
@@ -83,38 +93,6 @@ module.exports = {
 				filename: 'css/main.css'
 			}),
 			new CleanWebpackPlugin(),
-			new CopyWebpackPlugin(
-				[
-					{ from: './public/img', to: './dist/img' },
-				]
-			),
 	],
-
-	devServer: {
-		overlay: true,
-		contentBase: path.resolve(__dirname, 'public'),
-		port: 3000,
-		stats: 'errors-only'
-	},
-
-};
-
-if (isProduction) {
-
-	module.exports.plugins.push(
-		new UglifyJSPlugin({ sourceMap: true })
-	);
-
-	module.exports.plugins.push(
-		new ImageminPlugin({
-			test: /\.(png|gif|jpe?g|svg)$/
-		})
-	);
-
-	module.exports.plugins.push(
-		new webpack.LoaderOptionsPlugin({
-			minimizep: true
-		})
-	);
 
 };

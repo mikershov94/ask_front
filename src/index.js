@@ -1,3 +1,3 @@
 import foo from './main';
 
-foo('Michael');
+foo('John');

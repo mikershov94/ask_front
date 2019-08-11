@@ -1,9 +1,12 @@
 import React from 'react';
+import AppHeader from './../app-header';
+import QuestionsList from './../questions-list';
 
 const App = () => {
 	return(
 		<div>
-			<h1>Hello</h1>
+			<AppHeader />
+			<QuestionsList />
 		</div>
 	);
 };

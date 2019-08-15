@@ -4,7 +4,7 @@ import "./questions-list.sass";
 
 const QuestionsList = () => {
 	return(
-		<div>
+		<div className="questions-list">
 			
 			<div className="list-item">
 				<h3>Заголовок 1</h3>

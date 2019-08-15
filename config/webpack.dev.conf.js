@@ -27,4 +27,10 @@ module.exports = merge(baseWebpackConfig, {
 		port: 3000,
 	},
 
+	optimization: {
+		splitChunks: {
+			chunks: 'all',
+		}
+	},
+
 });

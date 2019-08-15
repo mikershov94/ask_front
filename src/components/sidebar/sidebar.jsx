@@ -1,8 +1,20 @@
 import React from 'react';
 
-const Sidebar = () => {
+import "./sidebar.sass";
+
+const Sidebar = ({ sidebarClass }) => {
 	return(
-		<div></div>
+		<div className={ sidebarClass }>
+		  <nav className="nav flex-column nav-pills">
+
+	      <a className="nav-link active"
+	      	 href="#">Последние</a>
+
+	      <a className="nav-link"
+	      	 href="#">Популярные</a>
+
+	    </nav>
+		</div>
 	);
 };
 

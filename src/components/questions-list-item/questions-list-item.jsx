@@ -1,4 +1,5 @@
 import React from 'react';
+import './questions-list-item.sass';
 
 const QuestionsListItem = () => {
 	return(

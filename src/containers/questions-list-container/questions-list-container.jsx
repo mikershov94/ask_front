@@ -28,7 +28,7 @@ class QuestionsListContainer extends React.Component {
 			return <ErrorIndicator />;
 		};
 
-		return <QuestionsList />;
+		return <QuestionsList questions={questions} />;
 	}
 
 };

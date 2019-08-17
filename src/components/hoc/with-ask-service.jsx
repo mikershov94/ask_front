@@ -1,7 +1,7 @@
 import React from 'react';
 import { AskConsumer } from './../ask-service-context';
 
-const withAskService = (Wrapped) => {		//компонент высшего порядка
+const withAskService = () => (Wrapped) => {		//компонент высшего порядка
 	return (props) => {			//возвращаем функцию
 		return(								//которая возвращает компонент Consumer (достает данные из контекста)
 			<AskConsumer>

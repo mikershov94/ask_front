@@ -12,7 +12,7 @@ class ErrorBondary extends React.Component {
 
 	componentDidCatch() {
 		this.setState(state => {
-			hasErrors: true,
+			hasErrors: true
 		});
 	}
 

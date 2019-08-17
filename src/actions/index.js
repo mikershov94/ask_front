@@ -20,13 +20,14 @@ const errorLoading = (error) => {
 
 const fetchQuestions = (askService) => () => (dispatch) => {
 	dispatch(questionsRequested());
-	askService.getQuestions
-		.then(data => dispatch(questionsLoaded))
-		.catch(err => dispatch(errorLoading));
+	askService.getQuestions()
+		.then(data => dispatch(questionsLoaded(data)))
+		.catch(err => dispatch(errorLoading(err)));
 };
 
 export {
 	questionsRequested,
 	questionsLoaded,
-	errorLoading
+	errorLoading,
+	fetchQuestions
 }

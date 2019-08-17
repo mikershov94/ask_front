@@ -1,5 +1,5 @@
 const initialState = {
-	questions = [],
+	questions: [],
 	loading: true,
 	errors: false
 };
@@ -25,6 +25,8 @@ const reducer = (state = initialState, action) => {
 				loading: false,
 				errors: true
 			};
+		default:
+			return state;
 	};
 
 };

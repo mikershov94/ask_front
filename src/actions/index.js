@@ -18,6 +18,13 @@ const errorLoading = (error) => {
 	};
 };
 
+const fetchQuestions = (askService) => () => (dispatch) => {
+	dispatch(questionsRequested());
+	askService.getQuestions
+		.then(data => dispatch(questionsLoaded))
+		.catch(err => dispatch(errorLoading));
+};
+
 export {
 	questionsRequested,
 	questionsLoaded,

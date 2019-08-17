@@ -3,7 +3,7 @@ import './error-indicator.sass';
 
 const ErrorIndicator = () => {
 	return(
-		<div>
+		<div className="error-indicator">
 			<h2>Извините</h2>
 			<h3>Что-то пошло не так</h3>
 		</div>

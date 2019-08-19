@@ -13,7 +13,7 @@ const QuestionsListItem = (props) => {
 	const { title, text, date, rating } = props.question;
 	const year = validateDate(date.getFullYear());
 	const month = validateDate(date.getMonth());
-	const day = validateDate(date.getDay());
+	const day = validateDate(date.getDate());
 	const hours = validateDate(date.getHours());
 	const minutes = validateDate(date.getMinutes());
 	return(

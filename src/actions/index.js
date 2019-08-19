@@ -20,7 +20,7 @@ const errorLoading = (error) => {
 
 const fetchQuestions = (askService) => () => (dispatch) => {
 	dispatch(questionsRequested());
-	askService.getQuestions()
+	askService.getLatestQuestions()
 		.then(data => dispatch(questionsLoaded(data)))
 		.catch(err => dispatch(errorLoading(err)));
 };

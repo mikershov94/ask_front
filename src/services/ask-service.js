@@ -8,7 +8,7 @@ class AskService {
 
 	}
 
-	getQuestions() {
+	getLatestQuestions() {
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
 				if (Math.random() < 0.75) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AppHeader from './../app-header';
 import { Latest, Popular } from './../pages';
 import Sidebar from './../sidebar';	
@@ -33,8 +33,11 @@ class App extends React.Component {
 				<AppHeader onBurgerClick={this.onBurgerClick} />
 				<div className="app-wrapper">
 					<Sidebar sidebarClass={sideBarClass} />
-					<Route path="/" exact component={Latest} />
-					<Route path="/popular" component={Popular} />
+					<div className="page">
+						<Route path="/" exact component={Latest} />
+						<Route path="/latest" component={Latest} />
+						<Route path="/popular" component={Popular} />
+					</div>
 				</div>
 			</div>
 		);

@@ -25,6 +25,7 @@ module.exports = merge(baseWebpackConfig, {
 		overlay: true,
 		stats: 'errors-only',
 		port: 3000,
+		historyApiFallback: true
 	},
 
 	optimization: {

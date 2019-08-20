@@ -34,10 +34,10 @@ class AskService {
 
 	getPopularQuestions() {
 		const ratingSort = (a, b) => {
-			if (a.date > b.date) {
+			if (a.rating > b.rating) {
 				return -1;
 			};
-			if (a.date < b.date) {
+			if (a.rating < b.rating) {
 				return 1;
 			};
 

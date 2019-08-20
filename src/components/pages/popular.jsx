@@ -2,11 +2,9 @@ import React from 'react';
 import { fetchPopularQuestions } from './../../actions';
 import QuestionsListContainer from './../../containers/questions-list-container';
 
-import './pages.sass';
-
 const Popular = () => {
 	return(
-		<div className="page">
+		<div>
 			<QuestionsListContainer fetchQuestions={fetchPopularQuestions} />
 		</div>
 	);

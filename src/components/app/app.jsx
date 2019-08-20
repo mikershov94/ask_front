@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AppHeader from './../app-header';
 import { Latest, Popular } from './../pages';
-import Sidebar from './../sidebar';	
+import SidebarContainer from './../../containers/sidebar-container';	
 
 import "./app.sass"
 
@@ -32,7 +32,7 @@ class App extends React.Component {
 			<div>
 				<AppHeader onBurgerClick={this.onBurgerClick} />
 				<div className="app-wrapper">
-					<SidebarConainer sidebarClass={sideBarClass} />
+					<SidebarContainer sidebarClass={sideBarClass} />
 					<div className="page">
 						<Route path="/" exact component={Latest} />
 						<Route path="/latest" component={Latest} />

@@ -1,17 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import "./sidebar.sass";
 
-const Sidebar = ({ sidebarClass }) => {
+const Sidebar = ({ sidebarClass, toggleToLatest, toggleToPopular, latest, popular }) => {
 	return(
 		<div className={ sidebarClass }>
 		  <nav className="nav flex-column nav-pills">
 
-	      <a className="nav-link active"
-	      	 href="#">Последние</a>
+	      <Link className={latest}
+	      	 		to="/latest"
+	      	 		onClick={toggleToLatest} >Последние</Link>
 
-	      <a className="nav-link"
-	      	 href="#">Популярные</a>
+	      <Link className={popular}
+	      	 		to="/popular"
+	      	 		onClick={toggleToPopular} >Популярные</Link>
 
 	    </nav>
 		</div>

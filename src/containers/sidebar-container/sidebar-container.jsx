@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mapStateToProps } from './redux-components';
+import { mapStateToProps, mapDispatchToProps } from './redux-components';
 import Sidebar from './../../components/sidebar';
 
 class SidebarContainer extends React.Component {
@@ -11,8 +11,10 @@ class SidebarContainer extends React.Component {
 
 		return <Sidebar latest={classLatest}
 										popular={classPopular}
-										sidebarClass={this.props.sidebarClass} />;
+										sidebarClass={this.props.sidebarClass}
+										toggleToLatest={this.props.toggleToLatest}
+										toggleToPopular={this.props.toggleToPopular} />;
 	}
 };
 
-export default connect(mapStateToProps)(SidebarContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(SidebarContainer);

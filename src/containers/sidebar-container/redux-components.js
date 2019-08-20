@@ -1,3 +1,6 @@
+import { bindActionCreators } from 'redux';
+import { toggleToLatest, toggleToPopular } from './../../actions';
+
 const mapStateToProps = (state) => {
 	return {
 		latest: state.sidebar.latest,
@@ -5,7 +8,15 @@ const mapStateToProps = (state) => {
 	};
 };
 
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators({
+		toggleToLatest: toggleToLatest,
+		toggleToPopular: toggleToPopular
+	}, dispatch);
+};
+
 
 export {
 	mapStateToProps,
+	mapDispatchToProps
 }

@@ -1,7 +1,11 @@
 const initialState = {
 	questions: [],
 	loading: true,
-	errors: false
+	errors: false,
+	sidebar: {
+		latest: true,
+		popular: false
+	}
 };
 
 const reducer = (state = initialState, action) => {
@@ -25,6 +29,9 @@ const reducer = (state = initialState, action) => {
 				loading: false,
 				errors: true
 			};
+
+		
+
 		default:
 			return state;
 	};

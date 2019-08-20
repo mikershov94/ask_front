@@ -32,7 +32,7 @@ class App extends React.Component {
 			<div>
 				<AppHeader onBurgerClick={this.onBurgerClick} />
 				<div className="app-wrapper">
-					<Sidebar sidebarClass={sideBarClass} />
+					<SidebarConainer sidebarClass={sideBarClass} />
 					<div className="page">
 						<Route path="/" exact component={Latest} />
 						<Route path="/latest" component={Latest} />

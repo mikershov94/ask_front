@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import AppHeader from './../app-header';
-import { Latest } from './../pages';
+import { Latest, Popular } from './../pages';
 import Sidebar from './../sidebar';	
 
 import "./app.sass"
@@ -34,6 +34,7 @@ class App extends React.Component {
 				<div className="app-wrapper">
 					<Sidebar sidebarClass={sideBarClass} />
 					<Route path="/" exact component={Latest} />
+					<Route path="/popular" component={Popular} />
 				</div>
 			</div>
 		);

@@ -25,6 +25,10 @@ const fetchLatestQuestions = (askService) => () => (dispatch) => {
 		.catch(err => dispatch(errorLoading(err)));
 };
 
+const fetchPopularQuestions = (askService) => () => (dispatch) => {
+	dispatch(questionsRequested());
+};
+
 export {
 	questionsRequested,
 	questionsLoaded,

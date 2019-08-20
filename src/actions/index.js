@@ -18,7 +18,7 @@ const errorLoading = (error) => {
 	};
 };
 
-const fetchQuestions = (askService) => () => (dispatch) => {
+const fetchLatestQuestions = (askService) => () => (dispatch) => {
 	dispatch(questionsRequested());
 	askService.getLatestQuestions()
 		.then(data => dispatch(questionsLoaded(data)))
@@ -29,5 +29,5 @@ export {
 	questionsRequested,
 	questionsLoaded,
 	errorLoading,
-	fetchQuestions
+	fetchLatestQuestions
 }

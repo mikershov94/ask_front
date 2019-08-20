@@ -1,4 +1,3 @@
-import { fetchQuestions } from './../../actions';
 import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => {
@@ -10,7 +9,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-	const { askService } = ownProps
+	const { askService, fetchQuestions } = ownProps
 	return bindActionCreators({
 		fetchQuestions: fetchQuestions(askService)
 	}, dispatch);

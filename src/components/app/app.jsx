@@ -1,6 +1,7 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import AppHeader from './../app-header';
-import QuestionsListContainer from './../../containers/questions-list-container';
+import { Latest } from './../pages';
 import Sidebar from './../sidebar';	
 
 import "./app.sass"
@@ -32,7 +33,7 @@ class App extends React.Component {
 				<AppHeader onBurgerClick={this.onBurgerClick} />
 				<div className="app-wrapper">
 					<Sidebar sidebarClass={sideBarClass} />
-					<QuestionsListContainer />
+					<Route path="/" exact component={Latest} />
 				</div>
 			</div>
 		);

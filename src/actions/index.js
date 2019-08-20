@@ -27,11 +27,15 @@ const fetchLatestQuestions = (askService) => () => (dispatch) => {
 
 const fetchPopularQuestions = (askService) => () => (dispatch) => {
 	dispatch(questionsRequested());
+	askService.getPopularQuestions()
+		.then(data => dispatch(questionsLoaded(data)))
+		.catch(err => dispatch(errorLoading(err)));
 };
 
 export {
 	questionsRequested,
 	questionsLoaded,
 	errorLoading,
-	fetchLatestQuestions
+	fetchLatestQuestions,
+	fetchPopularQuestions
 }

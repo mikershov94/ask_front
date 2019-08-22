@@ -10,6 +10,10 @@ import QuestionsList from './../../components/questions-list';
 class QuestionsListContainer extends React.Component {
 
 	componentDidMount() {
+		if ((this.props.url === '/popular') && !this.props.sidebar.popular) {
+			this.props.toggleToPopular();
+		};
+		
 		this.props.fetchQuestions();
 	}
 

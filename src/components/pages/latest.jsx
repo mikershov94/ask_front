@@ -2,10 +2,11 @@ import React from 'react';
 import { fetchLatestQuestions } from './../../actions';
 import QuestionsListContainer from './../../containers/questions-list-container';
 
-const Latest = () => {
+const Latest = (props) => {
 	return(
 		<div>
-			<QuestionsListContainer fetchQuestions={fetchLatestQuestions} />
+			<QuestionsListContainer fetchQuestions={fetchLatestQuestions}
+															url={props.match.url} />
 		</div>
 	);
 };

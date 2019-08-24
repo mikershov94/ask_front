@@ -5,10 +5,10 @@ import { AskProvider } from './components/ask-service-context';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ErrorBondary from './components/error-bondary';
 import store from './store';
-import AskService from './services';
+import TestService from './services';
 import App from './components/app';
 
-const askService = new AskService();
+const askService = new TestService();
 
 ReactDOM.render(<Provider store={store} >
 									<ErrorBondary>

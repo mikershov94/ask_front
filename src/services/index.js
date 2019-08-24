@@ -1,2 +1,2 @@
-import AskService from './ask-service';
-export default AskService;
+import TestService from './test-service';
+export default TestService;

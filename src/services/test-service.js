@@ -1,6 +1,6 @@
 import testData from './test-data';
 
-class AskService {
+class TestService {
 
 	constructor() {
 
@@ -56,4 +56,4 @@ class AskService {
 	}
 }
 
-export default AskService;
+export default TestService;

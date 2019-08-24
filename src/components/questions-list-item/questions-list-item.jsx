@@ -10,12 +10,12 @@ const validateDate = (int) => {
 };
 
 const QuestionsListItem = (props) => {
-	const { title, text, date, rating } = props.question;
-	const year = validateDate(date.getFullYear());
-	const month = validateDate(date.getMonth());
-	const day = validateDate(date.getDate());
-	const hours = validateDate(date.getHours());
-	const minutes = validateDate(date.getMinutes());
+	const { title, text, added_at, rating } = props.question;
+	const year = validateDate(added_at.getFullYear());
+	const month = validateDate(added_at.getMonth());
+	const day = validateDate(added_at.getDate());
+	const hours = validateDate(added_at.getHours());
+	const minutes = validateDate(added_at.getMinutes());
 	return(
 		<div className="list-item">
 				<h3>{title}</h3>

@@ -19,7 +19,7 @@ class QuestionsListContainer extends React.Component {
 
 	render() {
 		const {
-			questions,
+			pages,
 			loading,
 			errors
 		} = this.props;

@@ -3,7 +3,7 @@ import { toggleToLatest, toggleToPopular } from './../../actions';
 
 const mapStateToProps = (state) => {
 	return {
-		questions: state.questions,
+		pages: state.questions,
 		loading: state.loading,
 		errors: state.errors,
 		sidebar: state.sidebar

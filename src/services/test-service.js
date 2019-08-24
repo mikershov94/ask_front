@@ -21,10 +21,12 @@ class TestService {
 			return 0;
 		};
 
+		const page = this.data.questions[0];
+
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
 				if (Math.random() < 0.75) {
-					resolve(this.data.questions.sort(dateSort));
+					resolve(page);
 				} else {
 					reject(new Error('Something happened!'));
 				};

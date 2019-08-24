@@ -19,7 +19,7 @@ class QuestionsListContainer extends React.Component {
 
 	render() {
 		const {
-			pages,
+			page,
 			loading,
 			errors
 		} = this.props;
@@ -32,7 +32,7 @@ class QuestionsListContainer extends React.Component {
 			return <ErrorIndicator />;
 		};
 
-		return <QuestionsList questions={questions} />;
+		return <QuestionsList questions={page.results} />;
 	}
 
 };

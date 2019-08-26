@@ -18,9 +18,9 @@ const errorLoading = (error) => {
 	};
 };
 
-const fetchLatestQuestions = (askService) => () => (dispatch) => {
+const fetchLatestQuestions = (askService) => (numPage = 0) => (dispatch) => {
 	dispatch(questionsRequested());
-	askService.getLatestQuestions()
+	askService.getLatestQuestions(numPage)
 		.then(data => dispatch(questionsLoaded(data)))
 		.catch(err => dispatch(errorLoading(err)));
 };

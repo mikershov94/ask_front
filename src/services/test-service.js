@@ -9,9 +9,9 @@ class TestService {
 		
 	}
 
-	getLatestQuestions() {
+	getLatestQuestions(numPage = 0) {
 
-		const page = this.data.latestQuestions[0];
+		const page = this.data.latestQuestions[numPage];
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {

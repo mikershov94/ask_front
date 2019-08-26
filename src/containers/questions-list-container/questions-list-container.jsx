@@ -15,7 +15,7 @@ class QuestionsListContainer extends React.Component {
 			this.props.toggleToPopular();
 		};
 		
-		this.props.fetchQuestions();
+		this.props.fetchQuestions(this.props.numPage);
 	}
 
 	render() {
@@ -25,40 +25,51 @@ class QuestionsListContainer extends React.Component {
 			errors
 		} = this.props;
 
-		const pageCount = Math.floor((page.count / 5) + 1)
+		const pageCount = Math.floor((page.count / 5) + 1);
+
+		const renderPaginator = <Paginator previousLabel={'Пред.'}
+				           nextLabel={'След.'}
+				           breakLabel={'...'}
+				           breakClassName={"break-me"}
+				           pageCount={pageCount}
+				           marginPagesDisplayed={2}
+				           pageRangeDisplayed={1}
+				           onPageChange={this.handlePageClick}
+				           containerClassName={"pagination justify-content-center"}
+				           breakClassName={"page-item"}
+				           breakLinkClassName={"page-link"}
+				           pageClassName={"page-item"}
+				           pageLinkClassName={"page-link"}
+				           previousClassName={"page-item"}
+				           previousLinkClassName={"page-link"}
+				           nextClassName={"page-item"}
+				           nextLinkClassName={"page-link"}
+				           activeClassName={"active"} />;
 
 		if (loading) {
-			return <Spinner />;
+			return(
+				<div>
+					<Spinner />
+					{renderPaginator}
+				</div>
+			);
 		};
 
 		if (errors) {
-			return <ErrorIndicator />;
+			return (
+				<div>
+					<ErrorIndicator />
+					{renderPaginator}
+				</div>
+			);
 		};
+
 
 		return (
 			<div>
 				<QuestionsList questions={page.results} />
-				<div className="d-flex justify-content-center">
-					<Paginator previousLabel={'Пред.'}
-					           nextLabel={'След.'}
-					           breakLabel={'...'}
-					           breakClassName={"break-me"}
-					           pageCount={pageCount}
-					           marginPagesDisplayed={2}
-					           pageRangeDisplayed={1}
-					           onPageChange={this.handlePageClick}
-					           containerClassName={"pagination"}
-					           breakClassName={"page-item"}
-					           breakLinkClassName={"page-link"}
-					           pageClassName={"page-item"}
-					           pageLinkClassName={"page-link"}
-					           previousClassName={"page-item"}
-					           previousLinkClassName={"page-link"}
-					           nextClassName={"page-item"}
-					           nextLinkClassName={"page-link"}
-					           activeClassName={"active"} />
+				{renderPaginator}
 			</div>
-				</div>
 		);
 	}
 

@@ -58,5 +58,6 @@ export {
 	fetchLatestQuestions,
 	fetchPopularQuestions,
 	toggleToLatest,
-	toggleToPopular
+	toggleToPopular,
+	changePage
 }

@@ -25,9 +25,9 @@ const fetchLatestQuestions = (askService) => (numPage = 0) => (dispatch) => {
 		.catch(err => dispatch(errorLoading(err)));
 };
 
-const fetchPopularQuestions = (askService) => () => (dispatch) => {
+const fetchPopularQuestions = (askService) => (numPage = 0) => (dispatch) => {
 	dispatch(questionsRequested());
-	askService.getPopularQuestions()
+	askService.getPopularQuestions(numPage)
 		.then(data => dispatch(questionsLoaded(data)))
 		.catch(err => dispatch(errorLoading(err)));
 };

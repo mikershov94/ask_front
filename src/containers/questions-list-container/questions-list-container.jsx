@@ -13,7 +13,7 @@ class QuestionsListContainer extends React.Component {
 		super();
 
 		this.handlePageClick = (selected) => {
-			this.props.changePage();
+			this.props.changePage(selected.selected);
 			this.props.fetchQuestions(selected.selected);
 		};
 	}
@@ -22,7 +22,8 @@ class QuestionsListContainer extends React.Component {
 		if ((this.props.url === '/popular') && !this.props.sidebar.popular) {
 			this.props.toggleToPopular();
 		};
-		
+
+		this.props.changePage(0);
 		this.props.fetchQuestions(this.props.numPage);
 	}
 

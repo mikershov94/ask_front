@@ -24,9 +24,9 @@ class TestService {
 		});
 	}
 
-	getPopularQuestions() {
+	getPopularQuestions(numPage = 0) {
 		
-		const page = this.data.popularQuestions[0];
+		const page = this.data.popularQuestions[numPage];
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {

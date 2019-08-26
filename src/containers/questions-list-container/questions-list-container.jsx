@@ -9,6 +9,14 @@ import ErrorIndicator from './../../components/error-indicator';
 import QuestionsList from './../../components/questions-list';
 
 class QuestionsListContainer extends React.Component {
+	constructor() {
+		super();
+
+		this.handlePageClick = (selected) => {
+			this.props.changePage();
+			this.props.fetchQuestions(selected.selected);
+		};
+	}
 
 	componentDidMount() {
 		if ((this.props.url === '/popular') && !this.props.sidebar.popular) {
@@ -35,6 +43,7 @@ class QuestionsListContainer extends React.Component {
 				           marginPagesDisplayed={2}
 				           pageRangeDisplayed={1}
 				           onPageChange={this.handlePageClick}
+				           forcePage={this.props.numPage}
 				           containerClassName={"pagination justify-content-center"}
 				           breakClassName={"page-item"}
 				           breakLinkClassName={"page-link"}

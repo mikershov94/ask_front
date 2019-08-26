@@ -5,7 +5,8 @@ const initialState = {
 	sidebar: {
 		latest: true,
 		popular: false
-	}
+	},
+	numPage
 };
 
 const reducer = (state = initialState, action) => {
@@ -48,6 +49,12 @@ const reducer = (state = initialState, action) => {
 					latest: true,
 					popular: false,
 				}
+			};
+
+		case 'CHANGE_PAGE':
+			return {
+				...state,
+				numPage: action.payload
 			};
 
 		default:

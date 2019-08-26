@@ -1,5 +1,5 @@
 import { bindActionCreators } from 'redux';
-import { toggleToLatest, toggleToPopular } from './../../actions';
+import { toggleToLatest, toggleToPopular, changePage } from './../../actions';
 
 const mapStateToProps = (state) => {
 	return {

@@ -6,7 +6,7 @@ const initialState = {
 		latest: true,
 		popular: false
 	},
-	numPage
+	numPage: 0
 };
 
 const reducer = (state = initialState, action) => {

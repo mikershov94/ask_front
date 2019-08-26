@@ -44,6 +44,13 @@ const toggleToLatest = () => {
 	};
 };
 
+const changePage = (numPage) => {
+	return {
+		type: 'CHANGE_PAGE',
+		payload: numPage
+	}
+};
+
 export {
 	questionsRequested,
 	questionsLoaded,

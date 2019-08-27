@@ -6,7 +6,8 @@ const initialState = {
 		latest: true,
 		popular: false
 	},
-	numPage: 0
+	numPage: 0,
+	questionsCount: 0
 };
 
 const reducer = (state = initialState, action) => {
@@ -24,7 +25,8 @@ const reducer = (state = initialState, action) => {
 				...state,
 				questions: action.payload,
 				loading: false,
-				errors: false
+				errors: false,
+				questionsCount: action.payload.count
 			};
 		case 'FETCH_QUESTIONS_FAILURE':
 			return {

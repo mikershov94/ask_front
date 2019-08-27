@@ -34,13 +34,11 @@ class QuestionsListContainer extends React.Component {
 			errors
 		} = this.props;
 
-		const pageCount = Math.floor((page.count / 5) + 1);
-
 		const renderPaginator = <Paginator previousLabel={'Пред.'}
 				           nextLabel={'След.'}
 				           breakLabel={'...'}
 				           breakClassName={"break-me"}
-				           pageCount={pageCount}
+				           pageCount={this.props.pageCount}
 				           marginPagesDisplayed={2}
 				           pageRangeDisplayed={1}
 				           onPageChange={this.handlePageClick}

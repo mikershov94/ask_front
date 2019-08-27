@@ -8,6 +8,8 @@ import Spinner from './../../components/spinner';
 import ErrorIndicator from './../../components/error-indicator';
 import QuestionsList from './../../components/questions-list';
 
+import "./questions-list-container.sass";
+
 class QuestionsListContainer extends React.Component {
 	constructor() {
 		super();
@@ -57,7 +59,9 @@ class QuestionsListContainer extends React.Component {
 		if (loading) {
 			return(
 				<div>
-					<Spinner />
+					<div className="wrapper-list">
+						<Spinner />
+					</div>
 					{renderPaginator}
 				</div>
 			);
@@ -66,7 +70,9 @@ class QuestionsListContainer extends React.Component {
 		if (errors) {
 			return (
 				<div>
-					<ErrorIndicator />
+					<div className="wrapper-list">
+						<ErrorIndicator />
+					</div>
 					{renderPaginator}
 				</div>
 			);

@@ -51,6 +51,26 @@ const changePage = (numPage) => {
 	}
 };
 
+const questionPageRequested = () => {
+	return {
+		type: 'FETCH_QUESTION_PAGE_REQUEST'
+	};
+};
+
+const questionPageLoaded = (questionPage) => {
+	return {
+		type: 'FETCH_QUESTION_PAGE_SUCCESS',
+		payload: questionPage
+	};
+};
+
+const pageErrorLoading = (error) => {
+	return {
+		type: 'FETCH_QUESTION_PAGE_FAILURE',
+		payload: error
+	};
+};
+
 export {
 	questionsRequested,
 	questionsLoaded,

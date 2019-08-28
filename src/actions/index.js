@@ -72,14 +72,14 @@ const pageErrorLoading = (error) => {
 };
 
 const fetchLatestQuestionPage = (askService) => (idx) => (dispatch) => {
-	dispatch(questionsRequested());
+	dispatch(questionPageRequested());
 	askService.getLatestQuestionPage(idx)
 		.then(data => dispatch(questionPageLoaded(data)))
 		.catch(err => dispatch(pageErrorLoading(err)));
 };
 
 const fetchPopularQuestionPage = (askService) => (idx) => (dispatch) => {
-	dispatch(questionsRequested());
+	dispatch(questionPageRequested());
 	askService.getPopularQuestionPage(idx)
 		.then(data => dispatch(questionPageLoaded(data)))
 		.catch(err => dispatch(pageErrorLoading(err)));

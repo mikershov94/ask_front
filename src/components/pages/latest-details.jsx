@@ -5,7 +5,7 @@ import QuestionContainer from './../../containers/question-container';
 const LatestDetails = () => {
 
 	return(
-		<QuestionContainer fetchQuestion={fetchLatestQuestionPage} />
+		<QuestionContainer fetchQuestionPage={fetchLatestQuestionPage} />
 	);
 };
 

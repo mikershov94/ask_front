@@ -5,7 +5,7 @@ import QuestionContainer from './../../containers/question-container';
 const PopularDetails = () => {
 
 	return(
-		<QuestionContainer fetchQuestion={fetchPopularQuestionPage} />
+		<QuestionContainer fetchQuestionPage={fetchPopularQuestionPage} />
 	);
 };
 

@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import AppHeader from './../app-header';
 import { Latest, Popular } from './../pages';
 import SidebarContainer from './../../containers/sidebar-container';
-import QuestionContainer from './../../containers/question-container';	
+import Question from './../pages';	
 
 import "./app.sass"
 

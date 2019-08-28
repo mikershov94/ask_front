@@ -7,7 +7,7 @@ class QuestionContainer extends React.Component {
 
 	componentDidMount() {
 		const idx = this.props.idx;
-		this.props.fetchQuestionPage()
+		this.props.fetchQuestionPage(idx);
 	}
 
 	render() {

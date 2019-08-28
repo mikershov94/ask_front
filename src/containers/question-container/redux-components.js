@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => {
 	return {
-		questions: state.questions.results
+		question: state.questionPage.page
 	};
 };
 

@@ -1,22 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mapStateToProps } from './redux-components';
-import {Question} from './../../components/pages';
+import { mapStateToProps, mapDispatchToProps } from './redux-components';
+import QuestionDetails from './../../components/question-details';
 
 class QuestionContainer extends React.Component {
 
+	componentDidMount() {
+		const idx = this.props.idx;
+		this.props.fetchQuestionPage()
+	}
+
 	render() {
-		console.log(this.props.match.params.id)
-		const id = this.props.match.params.id;
-		const questions = this.props.questions;
-		console.log(questions)
-	
+		const question = this.props.question;
 
 		return(
-			<Question title={questions[id].title}
-								text={questions[id].text} />
+			<QuestionDetails title={question.title}
+											 text={question.text} />
 		);
 	}
 }
 
-export default connect(mapStateToProps)(QuestionContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionContainer)

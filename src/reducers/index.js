@@ -1,5 +1,10 @@
 const initialState = {
 	questions: [],
+	questionPage: {
+		page: {},
+		loading: true,
+		errors: false
+	},
 	loading: true,
 	errors: false,
 	sidebar: {
@@ -57,6 +62,34 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				numPage: action.payload
+			};
+
+		case 'FETCH_QUESTION_PAGE_REQUEST':
+			return {
+				...state,
+				questionPage: {
+					page: state.questionPage.page
+					loading: true,
+					errors: false
+				}
+			};
+		case 'FETCH_QUESTION_PAGE_SUCCESS':
+			return {
+				...state,
+				questionPage: {
+					page: action.payload
+					loading: false,
+					errors: false
+				}
+			};
+		case 'FETCH_QUESTION_PAGE_FAILURE':
+			return {
+				...state,
+				questionPage: {
+					page: {}
+					loading: false,
+					errors: true
+				}
 			};
 
 		default:

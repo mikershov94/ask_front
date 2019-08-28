@@ -38,6 +38,37 @@ class TestService {
 			}, 700)
 		});
 	}
+
+	getLatestQuestionPage(idx) {
+
+		const question = this.data.latestQuestionList[idx];
+
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if (Math.random() < 0.75) {
+					resolve(question);
+				} else {
+					reject(new Error('Something happened!'));
+				};
+			}, 700);
+		});
+
+	}
+
+	getPopularQuestionPage(idx) {
+
+		const question = this.data.popularQuestionList[idx];
+
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if (Math.random() < 0.75) {
+					resolve(question);
+				} else {
+					reject(new Error('Something happened!'));
+				};
+			}, 700);
+		});
+	}
 }
 
 export default TestService;

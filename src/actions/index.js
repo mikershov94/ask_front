@@ -71,13 +71,26 @@ const pageErrorLoading = (error) => {
 	};
 };
 
+const fetchLatestQuestionPage = (askService) => (idx) => (dispatch) => {
+	dispatch(questionsRequested());
+	askService.getLatestQuestionPage(idx)
+		.then(data => dispatch(questionPageLoaded(data)))
+		.catch(err => dispatch(pageErrorLoading(err)));
+};
+
+const fetchPopularQuestionPage = (askService) => (idx) => (dispatch) => {
+	dispatch(questionsRequested());
+	askService.getPopularQuestionPage(idx)
+		.then(data => dispatch(questionPageLoaded(data)))
+		.catch(err => dispatch(pageErrorLoading(err)));
+};
+
 export {
-	questionsRequested,
-	questionsLoaded,
-	errorLoading,
 	fetchLatestQuestions,
 	fetchPopularQuestions,
 	toggleToLatest,
 	toggleToPopular,
-	changePage
+	changePage,
+	fetchLatestQuestionPage,
+	fetchPopularQuestionPage
 }

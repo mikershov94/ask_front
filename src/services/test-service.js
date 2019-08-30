@@ -41,7 +41,7 @@ class TestService {
 
 	getLatestQuestionPage(idx) {
 
-		const question = this.data.latestQuestionList[idx];
+		const question = this.data.latestQuestionsList[idx-1];
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
@@ -57,7 +57,7 @@ class TestService {
 
 	getPopularQuestionPage(idx) {
 
-		const question = this.data.popularQuestionList[idx];
+		const question = this.data.popularQuestionsList[idx-1];
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {

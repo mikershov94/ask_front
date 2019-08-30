@@ -1,7 +1,7 @@
 const initialState = {
 	questions: [],
 	questionPage: {
-		page: {},
+		page: null,
 		loading: true,
 		errors: false
 	},
@@ -68,7 +68,7 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				questionPage: {
-					page: state.questionPage.page
+					page: state.questionPage.page,
 					loading: true,
 					errors: false
 				}
@@ -77,7 +77,7 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				questionPage: {
-					page: action.payload
+					page: action.payload,
 					loading: false,
 					errors: false
 				}
@@ -86,7 +86,7 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				questionPage: {
-					page: {}
+					page: null,
 					loading: false,
 					errors: true
 				}

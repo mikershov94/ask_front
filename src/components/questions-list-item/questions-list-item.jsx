@@ -22,8 +22,15 @@ const QuestionsListItem = (props) => {
 	if (url === '/') {
 		url = '/latest';
 	};
+
+	let itemClass = "";
+	if (props.idx % 2 === 0) {
+		itemClass = "list-item grey"
+	} else {
+		itemClass = "list-item"
+	}
 	return(
-		<div className="list-item">
+		<div className={itemClass} >
 				<Link to={`${url}/${props.idx}`} ><h3>{title}</h3></Link>
 				<p>{text}</p>
 				<div className="meta-info">

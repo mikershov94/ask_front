@@ -22,7 +22,7 @@ const QuestionDetails = (props) => {
 		<div>
 			<h2>{title}</h2>
 			<p>{text}</p>
-			<div>
+			<div className="details-meta-info" >
 					<p>Задан: {`${day}.${month}.${year} ${hours}:${minutes}`}</p>
 					<p>Лайков: {rating}</p>
 					<span>Нравится 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './questions-list-item.sass';
 
 const validateDate = (int) => {
@@ -16,9 +17,14 @@ const QuestionsListItem = (props) => {
 	const day = validateDate(added_at.getDate());
 	const hours = validateDate(added_at.getHours());
 	const minutes = validateDate(added_at.getMinutes());
+
+	let url = props.url;
+	if (url === '/') {
+		url = '/latest';
+	};
 	return(
 		<div className="list-item">
-				<h3>{title}</h3>
+				<Link to={`${url}/${props.idx}`} ><h3>{title}</h3></Link>
 				<p>{text}</p>
 				<div className="meta-info">
 					<p>Задан: {`${day}.${month}.${year} ${hours}:${minutes}`}</p>

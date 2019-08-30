@@ -81,7 +81,8 @@ class QuestionsListContainer extends React.Component {
 
 		return (
 			<div>
-				<QuestionsList questions={page.results} />
+				<QuestionsList questions={page.results}
+											 url={this.props.url} />
 				{renderPaginator}
 			</div>
 		);

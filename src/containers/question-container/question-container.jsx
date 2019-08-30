@@ -26,8 +26,7 @@ class QuestionContainer extends React.Component {
 		};
 
 		return(
-			<QuestionDetails title={question.title}
-											 text={question.text} />
+			<QuestionDetails question={question} />
 		);
 	}
 }

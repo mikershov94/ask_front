@@ -1,18 +1,22 @@
 const initialState = {
-	questions: [],
+	questionsList: {
+		questions: [],
+		loading: true,
+		errors: false,
+	},
 	questionPage: {
 		page: null,
 		loading: true,
 		errors: false
 	},
-	loading: true,
-	errors: false,
 	sidebar: {
 		latest: true,
 		popular: false
 	},
-	numPage: 0,
-	questionsCount: 0
+	paginate: {
+		numPage: 0,
+		questionsCount: 0
+	},
 };
 
 const reducer = (state = initialState, action) => {
@@ -21,24 +25,33 @@ const reducer = (state = initialState, action) => {
 		case 'FETCH_QUESTIONS_REQUEST':
 			return {
 				...state,
-				questions: state.questions,
-				loading: true,
-				errors: false
+				questionsList: {
+					questions: state.questions,
+					loading: true,
+					errors: false
+				}
 			};
 		case 'FETCH_QUESTIONS_SUCCESS':
 			return {
 				...state,
-				questions: action.payload,
-				loading: false,
-				errors: false,
-				questionsCount: action.payload.count
+				questionsList: {
+					questions: action.payload,
+					loading: false,
+					errors: false
+				},
+				paginate: {
+					...state,
+					questionsCount: action.payload.count
+				}
 			};
 		case 'FETCH_QUESTIONS_FAILURE':
 			return {
 				...state,
-				questions: [],
-				loading: false,
-				errors: true
+				questionsList: {
+					questions: [],
+					loading: false,
+					errors: true
+				}
 			};
 
 		case 'TOGGLE_SORT_TO_POPULAR':
@@ -61,7 +74,10 @@ const reducer = (state = initialState, action) => {
 		case 'CHANGE_PAGE':
 			return {
 				...state,
-				numPage: action.payload
+				paginate: {
+					...state,
+					numPage: action.payload
+				}
 			};
 
 		case 'FETCH_QUESTION_PAGE_REQUEST':

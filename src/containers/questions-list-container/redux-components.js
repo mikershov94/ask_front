@@ -2,13 +2,13 @@ import { bindActionCreators } from 'redux';
 import { toggleToLatest, toggleToPopular, changePage } from './../../actions';
 
 const mapStateToProps = (state) => {
-	const pageCount = Math.floor((state.paginate.questionsCount / 5) + 1);
+	const pageCount = Math.floor((state.questionsList.questionsCount / 5) + 1);
 	return {
 		page: state.questionsList.questions,
 		loading: state.questionsList.loading,
 		errors: state.questionsList.errors,
 		sidebar: state.sidebar,
-		numPage: state.paginate.numPage,
+		numPage: state.questionsList.numPage,
 		pageCount: pageCount
 	};
 };

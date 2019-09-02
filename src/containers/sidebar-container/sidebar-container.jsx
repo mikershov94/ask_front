@@ -7,8 +7,11 @@ import Sidebar from './../../components/sidebar';
 class SidebarContainer extends React.Component {
 
 	render() {
-		const classLatest = this.props.sidebar.latest ? "nav-link active" : "nav-link";
-		const classPopular = this.props.sidebar.popular ? "nav-link active": "nav-link";
+		console.log(this.props.sidebar);
+		const latest = this.props.latest;
+		const popular = this.props.popular;
+		const classLatest = latest ? "nav-link active" : "nav-link";
+		const classPopular = popular ? "nav-link active": "nav-link";
 
 		return <Sidebar latest={classLatest}
 										popular={classPopular}

@@ -6,9 +6,7 @@ const initialState = {
 		errors: false
 	},
 	
-	paginate: {
-		numPage: 0,
-	},
+	
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,14 +16,7 @@ const reducer = (state = initialState, action) => {
 
 		
 
-		case 'CHANGE_PAGE':
-			return {
-				...state,
-				paginate: {
-					...state,
-					numPage: action.payload
-				}
-			};
+		
 
 		case 'FETCH_QUESTION_PAGE_REQUEST':
 			return {

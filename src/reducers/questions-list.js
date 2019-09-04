@@ -1,4 +1,5 @@
 const updateQuestionsList = (state, action) => {
+	
 	if (state === undefined) {
 		return {
 			questions: [],
@@ -34,13 +35,13 @@ const updateQuestionsList = (state, action) => {
 				errors: true,
 				questionsCount: 0
 			};
-		switch (action.type) {
 		case 'CHANGE_PAGE':
 			return {	
 				...state,
 				numPage: action.payload
 			};
-	};
+		default:
+			return state.questionsList;
 	};
 
 };

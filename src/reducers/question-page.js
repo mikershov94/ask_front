@@ -27,6 +27,8 @@ const updateQuestionPage = (state, action) => {
 				loading: false,
 				errors: true
 			};
+		default:
+			return state.questionPage;
 	};
 
 };

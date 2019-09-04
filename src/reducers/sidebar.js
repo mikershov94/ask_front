@@ -1,5 +1,5 @@
 const updateSidebar = (state, action) => {
-
+	
 	if (state === undefined) {
 		return {
 			latest: true,
@@ -18,6 +18,8 @@ const updateSidebar = (state, action) => {
 				latest: true,
 				popular: false,
 			};
+		default:
+			return state.sidebar;
 	};
 
 };

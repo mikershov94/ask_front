@@ -6,68 +6,38 @@ class TestService {
 
 		this.data = testData;
 
-		
+	}
+
+	testLoading(data) {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if (Math.random() < 0.75) {
+					resolve(data);
+				} else {
+					reject(new Error('Something happened!'));
+				};
+			}, 700);
+		})
 	}
 
 	getLatestQuestions(numPage = 0) {
-
 		const page = this.data.latestQuestions[numPage];
-
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				//if (Math.random() < 0.75) {
-					resolve(page);
-				//} else {
-				//	reject(new Error('Something happened!'));
-				//};
-			}, 700);
-		});
+		return this.testLoading(page);
 	}
 
 	getPopularQuestions(numPage = 0) {
-		
 		const page = this.data.popularQuestions[numPage];
-
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				//if (Math.random() < 0.75) {
-					resolve(page);
-				//} else {
-				//	reject(new Error('Something happened!'));
-				//};
-			}, 700)
-		});
+		return this.testLoading(page);
 	}
 
 	getLatestQuestionPage(idx) {
-
 		const question = this.data.latestQuestionsList[idx-1];
-
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				//if (Math.random() < 0.75) {
-					resolve(question);
-				//} else {
-				//	reject(new Error('Something happened!'));
-				//};
-			}, 700);
-		});
-
+		return this.testLoading(question);
 	}
 
 	getPopularQuestionPage(idx) {
-
 		const question = this.data.popularQuestionsList[idx-1];
-
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				//if (Math.random() < 0.75) {
-					resolve(question);
-				//} else {
-				//	reject(new Error('Something happened!'));
-				//};
-			}, 700);
-		});
+		return this.testLoading(question);
 	}
 }
 

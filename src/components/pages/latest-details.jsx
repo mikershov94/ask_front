@@ -5,7 +5,8 @@ import QuestionContainer from './../../containers/question-container';
 const LatestDetails = (props) => {
 	return(
 		<QuestionContainer fetchQuestionPage={fetchLatestQuestionPage}
-											 idx={props.match.params.idx} />
+											 idx={props.match.params.idx}
+											 path={props.match.path} />
 	);
 };
 

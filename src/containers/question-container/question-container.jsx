@@ -10,6 +10,11 @@ import ErrorIndicator from './../../components/error-indicator';
 class QuestionContainer extends React.Component {
 
 	componentDidMount() {
+		if ((this.props.path === '/popular/:idx') && !this.props.sidebar.popular) {
+			this.props.toggleToPopular();
+		};
+
+		const numPage = this.props.numPage;
 		const idx = this.props.idx;
 		this.props.fetchQuestionPage(idx);
 	}

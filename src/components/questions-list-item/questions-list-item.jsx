@@ -28,7 +28,8 @@ const QuestionsListItem = (props) => {
 		itemClass = "list-item grey"
 	} else {
 		itemClass = "list-item"
-	}
+	};
+
 	return(
 		<div className={itemClass} >
 				<Link to={`${url}/${props.idx}`} ><h3>{title}</h3></Link>

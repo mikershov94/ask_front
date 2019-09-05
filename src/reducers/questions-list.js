@@ -1,5 +1,5 @@
 const updateQuestionsList = (state, action) => {
-	
+
 	if (state === undefined) {
 		return {
 			questions: [],
@@ -13,7 +13,7 @@ const updateQuestionsList = (state, action) => {
 	switch(action.type) {
 		case 'FETCH_QUESTIONS_REQUEST':
 			return {
-				...state,
+				...state.questionsList,
 				questions: state.questions,
 				loading: true,
 				errors: false,
@@ -21,7 +21,7 @@ const updateQuestionsList = (state, action) => {
 			};
 		case 'FETCH_QUESTIONS_SUCCESS':
 			return {
-				...state,
+				...state.questionsList,
 				questions: action.payload,
 				loading: false,
 				errors: false,
@@ -29,7 +29,7 @@ const updateQuestionsList = (state, action) => {
 			};
 		case 'FETCH_QUESTIONS_FAILURE':
 			return {
-				...state,
+				...state.questionsList,
 				questions: [],
 				loading: false,
 				errors: true,
@@ -37,7 +37,7 @@ const updateQuestionsList = (state, action) => {
 			};
 		case 'CHANGE_PAGE':
 			return {	
-				...state,
+				...state.questionsList,
 				numPage: action.payload
 			};
 		default:

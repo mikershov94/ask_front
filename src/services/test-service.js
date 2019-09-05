@@ -15,11 +15,11 @@ class TestService {
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
-				if (Math.random() < 0.75) {
+				//if (Math.random() < 0.75) {
 					resolve(page);
-				} else {
-					reject(new Error('Something happened!'));
-				};
+				//} else {
+				//	reject(new Error('Something happened!'));
+				//};
 			}, 700);
 		});
 	}
@@ -30,11 +30,11 @@ class TestService {
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
-				if (Math.random() < 0.75) {
+				//if (Math.random() < 0.75) {
 					resolve(page);
-				} else {
-					reject(new Error('Something happened!'));
-				};
+				//} else {
+				//	reject(new Error('Something happened!'));
+				//};
 			}, 700)
 		});
 	}
@@ -45,11 +45,11 @@ class TestService {
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
-				if (Math.random() < 0.75) {
+				//if (Math.random() < 0.75) {
 					resolve(question);
-				} else {
-					reject(new Error('Something happened!'));
-				};
+				//} else {
+				//	reject(new Error('Something happened!'));
+				//};
 			}, 700);
 		});
 
@@ -61,11 +61,11 @@ class TestService {
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
-				if (Math.random() < 0.75) {
+				//if (Math.random() < 0.75) {
 					resolve(question);
-				} else {
-					reject(new Error('Something happened!'));
-				};
+				//} else {
+				//	reject(new Error('Something happened!'));
+				//};
 			}, 700);
 		});
 	}

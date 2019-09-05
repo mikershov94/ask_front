@@ -6,7 +6,8 @@ const PopularDetails = (props) => {
 
 	return(
 		<QuestionContainer fetchQuestionPage={fetchPopularQuestionPage}
-											 idx={props.match.params.idx} />
+											 idx={props.match.params.idx}
+											 path={props.match.path} />
 	);
 };
 

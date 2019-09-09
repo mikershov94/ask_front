@@ -39,6 +39,17 @@ class TestService {
 		const question = this.data.popularQuestionsList[idx-1];
 		return this.testLoading(question);
 	}
+
+	getAnswers(question_id) {
+		const data = this.data.answers;
+		let answers = [];
+		data.map(answer => {
+			if (answer.question_id === question_id) {
+				answers.push(answer);
+			};
+		});
+		return this.testLoading(answers);
+	}
 }
 
 export default TestService;

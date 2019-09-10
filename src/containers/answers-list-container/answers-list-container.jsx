@@ -20,7 +20,7 @@ class AnswersListContainer extends React.Component {
 			return <ErrorIndicator />;
 		};
 
-		return <AnswersList />;
+		return <AnswersList answers={answers} />;
 	}
 };
 

@@ -11,6 +11,9 @@ import {
 	toggleToLatest,
 	toggleToPopular
 } from './sidebar';
+import {
+	fetchAnswers
+} from './answers-list';
 
 export {
 	fetchLatestQuestions,
@@ -19,5 +22,6 @@ export {
 	toggleToPopular,
 	changePage,
 	fetchLatestQuestionPage,
-	fetchPopularQuestionPage
+	fetchPopularQuestionPage,
+	fetchAnswers,
 };

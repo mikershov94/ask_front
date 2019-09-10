@@ -5,7 +5,7 @@ import './answers-list-item.sass';
 const AnswersListItem = ({ text, trust }) => {
 	return(
 		<div>
-			<h3>{text}</h3>
+			<p>{text}</p>
 			<div>{trust}</div>
 		</div>
 	);

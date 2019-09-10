@@ -6,6 +6,7 @@ import { withAskService } from './../../components/hoc';
 import QuestionDetails from './../../components/question-details';
 import Spinner from './../../components/spinner';
 import ErrorIndicator from './../../components/error-indicator';
+import AnswersListContainer from './../../containers/answers-list-container';
 
 class QuestionContainer extends React.Component {
 
@@ -31,7 +32,10 @@ class QuestionContainer extends React.Component {
 		};
 
 		return(
-			<QuestionDetails question={question} />
+			<div>
+				<QuestionDetails question={question} />
+				<AnswersListContainer question_id={question.id} />
+			</div>
 		);
 	}
 }

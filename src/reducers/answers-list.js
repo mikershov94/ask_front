@@ -32,3 +32,5 @@ const updateAnswers = (state, action) => {
 	};
 
 };
+
+export default updateAnswers;

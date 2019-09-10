@@ -10,11 +10,12 @@ import AnswersList from './../../components/answers-list';
 class AnswersListContainer extends React.Component {
 
 	componentDidMount() {
-		this.props.fetchAnswers();
+		this.props.fetchAnswers(this.props.question_id);
 	}
 
 	render() {
 		const { answers, loading, errors } = this.props;
+		console.log(answers);
 
 		if (loading) {
 			return <Spinner />;

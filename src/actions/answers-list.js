@@ -1,12 +1,12 @@
 const answersListRequested = () => {
 	return {
-		type: 'ANSWERS_LIST_REQUEST';
+		type: 'ANSWERS_LIST_REQUEST',
 	};
 };
 
 const answersListLoaded = (answers) => {
 	return {
-		type: 'ANSWERS_LIST_SUCCESS';
+		type: 'ANSWERS_LIST_SUCCESS',
 		payload: answers,
 	};
 };

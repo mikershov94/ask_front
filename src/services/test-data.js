@@ -935,13 +935,13 @@ const testData = {
 		{
 			id: 14,
 			text: "Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis",
-			question_id: 5
+			question_id: 5,
 			trust: 2,
 		},
 		{
 			id: 15,
 			text: "Laudantium, totam rem",
-			question_id: 5
+			question_id: 5,
 			trust: 1,
 		},
 		{

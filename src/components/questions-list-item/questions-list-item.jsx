@@ -1,14 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './questions-list-item.sass';
-
-const validateDate = (int) => {
-	const string = String(int);
-	if (int < 10) {
-		return('0'+string);
-	}
-	return string;
-};
+import { validateDate } from './../../utils';
 
 const QuestionsListItem = (props) => {
 	const { title, text, added_at, rating } = props.question;

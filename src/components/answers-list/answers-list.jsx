@@ -12,8 +12,7 @@ const AnswersList = ({ answers }) => {
 					answers.map((answer, idx) => {
 						return(
 							<div key={idx} >
-								<AnswersListItem text={answer.text}
-															 	 trust={answer.trust} />
+								<AnswersListItem answer={answer} />
 							</div>
 						);
 					})

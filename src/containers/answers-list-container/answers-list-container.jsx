@@ -7,6 +7,8 @@ import Spinner from './../../components/spinner';
 import ErrorIndicator from './../../components/error-indicator';
 import AnswersList from './../../components/answers-list';
 
+import './answers-list-container.sass';
+
 class AnswersListContainer extends React.Component {
 
 	componentDidMount() {
@@ -17,11 +19,19 @@ class AnswersListContainer extends React.Component {
 		const { answers, loading, errors } = this.props;
 
 		if (loading) {
-			return <Spinner />;
+			return (
+				<div className="wrapper-answer">
+					<Spinner />
+				</div>
+			);
 		};
 
 		if (errors) {
-			return <ErrorIndicator />;
+			return (
+				<div className="wrapper-answer">
+					<ErrorIndicator />
+				</div>
+			);
 		};
 
 		return <AnswersList answers={answers} />;

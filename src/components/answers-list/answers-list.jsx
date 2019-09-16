@@ -5,7 +5,7 @@ import './answers-list.sass';
 
 const AnswersList = ({ answers }) => {
 	return(
-		<div>
+		<div className="answers-list">
 			<h2>Ответы:</h2>
 			<div>
 				{

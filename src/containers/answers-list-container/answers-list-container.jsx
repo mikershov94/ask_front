@@ -15,7 +15,6 @@ class AnswersListContainer extends React.Component {
 
 	render() {
 		const { answers, loading, errors } = this.props;
-		console.log(answers);
 
 		if (loading) {
 			return <Spinner />;
